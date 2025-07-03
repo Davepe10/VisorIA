@@ -1,0 +1,31 @@
+# Ignorar el entorno virtual
+venv/
+
+# Ignorar archivos de caché de Python
+__pycache__/
+
+# Ignorar archivos de depuración
+*.pyc
+
+# Ignorar archivos generados por IDEs
+.idea/
+.vscode/
+
+# Ignorar archivos de configuración locales
+.env
+.env.example
+
+# Ignorar archivos de subida de archivos
+uploads/*
+
+# Ignorar archivos de modelo grandes (si ya están gestionados por Git LFS)
+# Si usas Git LFS, estos archivos ya estarán gestionados, pero puedes dejarlos aquí por precaución
+modelo1.pt
+modelo2.pt
+
+# Ignorar archivos específicos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de requirements.txt si no los quieres versionar
+requirements.txt

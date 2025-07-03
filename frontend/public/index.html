@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detección en Vivo - YOLOv8</title>
+  <link rel="stylesheet" href="/frontend/src/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">VISOR IA</div>
+    <div class="nav-links">
+      <a href="/frontend/public/index.html" class="active">Cámara</a>
+      <a href="/frontend/public/uploads.html">Subir Imagen</a>
+      <a href="/frontend/public/models.html">Modelos</a>
+      <a href="/frontend/public/foto.html">Fotos</a>
+      <a href="/frontend/public/Codigo_modelo1.html">Código Modelo 1</a>
+      <a href="/frontend/public/Codigo_modelo2.html">Código Modelo 2</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="controls">
+      <label for="cameraSelect">🎥 Cámara:</label>
+      <select id="cameraSelect"></select>
+
+      <label for="modelSelector">📦 Modelo:</label>
+      <select id="modelSelector"></select>
+
+      <button id="startBtn">▶️ Iniciar</button>
+      <button id="stopBtn" disabled>⏹️ Detener</button>
+      <span id="fps" class="fps-display">FPS: 0</span>
+    </section>
+
+    <section class="video-area">
+      <div class="video-wrapper">
+        <video id="camera" autoplay playsinline muted class="hidden"></video>
+        <canvas id="canvas" width="320" height="240"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <div id="spinnerOverlay" class="spinner-overlay hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <script src="/frontend/src/js/camera.js"></script>
+</body>
+</html>

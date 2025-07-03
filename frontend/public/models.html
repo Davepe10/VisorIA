@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestión de Modelos - YOLOv8</title>
+  <link rel="stylesheet" href="/frontend/src/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">VISOR IA</div>
+    <div class="nav-links">
+      <a href="/frontend/public/index.html" class="active">Cámara</a>
+      <a href="/frontend/public/uploads.html">Subir Imagen</a>
+      <a href="/frontend/public/models.html">Modelos</a>
+      <a href="/frontend/public/foto.html">Fotos</a>
+      <a href="/frontend/public/Codigo_modelo1.html">Código Modelo 1</a>
+      <a href="/frontend/public/Codigo_modelo2.html">Código Modelo 2</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="models-panel">
+      <h2>📦 Modelos Disponibles</h2>
+
+      <div class="model-upload">
+        <label for="modelUpload"><strong>Subir nuevo modelo (.pt):</strong></label><br>
+        <input type="file" id="modelUpload" accept=".pt">
+        <button id="uploadBtn">🚀 Subir Modelo</button>
+      </div>
+
+      <div class="model-section">
+        <h3>🧠 Modelos Predefinidos</h3>
+        <ul id="preloadedModels" class="model-list"></ul>
+      </div>
+
+      <div class="model-section">
+        <h3>📁 Modelos Subidos</h3>
+        <ul id="uploadedModels" class="model-list"></ul>
+      </div>
+
+      <p><strong>🟢 Modelo en uso:</strong> <span id="currentModel">Cargando...</span></p>
+      <button id="refreshBtn">🔄 Actualizar Lista</button>
+    </div>
+  </main>
+
+  <script src="/frontend/src/js/models.js"></script>
+</body>
+</html>
+
+

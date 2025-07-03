@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subir Imagen - YOLOv8</title>
+  <link rel="stylesheet" href="/frontend/src/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">VISOR IA</div>
+    <div class="nav-links">
+      <a href="/frontend/public/index.html" class="active">Cámara</a>
+      <a href="/frontend/public/uploads.html">Subir Imagen</a>
+      <a href="/frontend/public/models.html">Modelos</a>
+      <a href="/frontend/public/foto.html">Fotos</a>
+      <a href="/frontend/public/Codigo_modelo1.html">Código Modelo 1</a>
+      <a href="/frontend/public/Codigo_modelo2.html">Código Modelo 2</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="upload-area">
+      <input type="file" id="imageInput" accept="image/*">
+      <label for="uploadModelSelector">Modelo:</label>
+      <select id="uploadModelSelector"></select>
+      <button id="processBtn">Procesar Imagen</button>
+
+      <div class="progress-bar-container">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+
+      <p id="uploadStatus"></p>
+
+      <!-- Canvas en lugar de dos imágenes -->
+      <div class="image-view single-canvas">
+        <canvas id="resultCanvas"></canvas>
+      </div>
+
+      <div id="detectionResults"></div>
+    </div>
+  </main>
+
+  <script src="/frontend/src/js/uploads.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VISOR IA - Cámara Inteligente</title>
+  <link rel="stylesheet" href="/frontend/src/css/style.css" />
+ 
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">VISOR IA</div>
+    <div class="nav-links">
+      <a href="/frontend/public/index.html" class="active">Cámara</a>
+      <a href="/frontend/public/uploads.html">Subir Imagen</a>
+      <a href="/frontend/public/models.html">Modelos</a>
+      <a href="/frontend/public/foto.html">Fotos</a>
+      <a href="/frontend/public/Codigo_modelo1.html">Código Modelo 1</a>
+      <a href="/frontend/public/Codigo_modelo2.html">Código Modelo 2</a>
+    </div>
+  </nav>
+  
+  <div class="header">
+    <h1>Cámara Inteligente</h1>
+  </div>
+
+  <div class="camera-container">
+    <video id="videoPreview" class="hidden" autoplay playsinline></video>
+    <canvas id="canvas" class="hidden"></canvas>
+    <div id="spinnerOverlay" class="hidden">
+      <div class="spinner"></div>
+      <p>Procesando imagen...</p>
+    </div>
+    <div id="detectionResults" class="detection-results"></div>
+  </div>
+
+  <div class="controls">
+    <div class="camera-selector hidden">
+      <select id="cameraSelect"></select>
+    </div>
+    <div class="model-selector hidden">
+      <select id="modelSelect"></select>
+    </div>
+    
+    <button id="startPreview" class="btn-secundario">Iniciar Cámara</button>
+    <button id="takePhoto" class="hidden">📸 Tomar Foto</button>
+    <button id="backToCamera" class="hidden btn-secundario">↩ Volver</button>
+    <button id="stopPreview" class="hidden btn-secundario">⏹ Apagar</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2 @11"></script>
+  <script src="/frontend/src/js/foto.js"></script>
+</body>
+</html>

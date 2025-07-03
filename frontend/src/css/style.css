@@ -1,0 +1,283 @@
+/* Estilos base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2c3e50;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.navbar .nav-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  opacity: 0.8;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Controls */
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.controls label,
+.controls select,
+.controls button,
+.controls .fps-display {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.controls label {
+  font-weight: bold;
+}
+
+.controls select,
+.controls button {
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+}
+
+.controls .fps-display {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+/* Video Area */
+.video-area {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 3px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: #000;
+}
+
+video {
+  display: none; /* Ocultamos el video, solo usamos canvas */
+}
+
+/* Image View */
+.image-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.image-view img {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Detection Results */
+#detectionResults {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #00b894;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Spinner Overlay */
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.spinner-overlay.hidden {
+  display: none;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+/* Upload Area and Models Panel */
+.upload-area, .models-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.upload-area input,
+.models-panel input,
+.upload-area button,
+.models-panel button,
+.upload-area select {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.upload-area input:focus,
+.models-panel input:focus,
+.upload-area button:focus,
+.models-panel button:focus,
+.upload-area select:focus {
+  border-color: #00b894;
+  outline: none;
+}
+
+.upload-area button,
+.models-panel button {
+  background-color: #00b894;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.upload-area button:hover,
+.models-panel button:hover {
+  background-color: #009d78;
+}
+
+/* Media Queries para Dispositivos Móviles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .navbar .nav-links {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .controls {
+    grid-template-columns: 1fr;
+  }
+  
+  .video-area {
+    border: none;
+    border-radius: 0;
+  }
+  
+  .image-view {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-view img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .nav-brand {
+    font-size: 1.25rem;
+  }
+  
+  .controls label,
+  .controls select,
+  .controls button,
+  .controls .fps-display {
+    font-size: 0.9rem;
+  }
+}
+
